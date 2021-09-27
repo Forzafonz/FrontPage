@@ -1,0 +1,20 @@
+@font-face{
+  font-family: 'Explora';
+  src:'https://fonts.googleapis.com/css2?family=Explora&display=swap'
+}
+
+.name{
+  position: absolute;
+  background-color: transparent;
+  z-index: 1;
+  color: rgba(243, 138, 18, 0.6);
+  font-size: 4rem;
+  font-family: Explora;
+  text-transform: uppercase;
+  letter-spacing: 5rem;
+  text-shadow: 0 0 1px white, 0 0 1px white, 0 0 1px white, 0 0 1px white;
+  top: 50%;
+  left: 25%;
+  right: 30%;
+  pointer-events: none;
+}
