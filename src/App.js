@@ -42,15 +42,15 @@ function Ground() {
 
   return (
     <Reflector 
-      blur={[512, 512]} // Blur ground reflections (width, heigt), 0 skips blur
-      mixBlur={0.75} // How much blur mixes with surface roughness
-      mixStrength={0.75} // Strength of the reflections
-      resolution={1024} // Off-buffer resolution, lower=faster, higher=better quality
+      blur={[0, 0]} // Blur ground reflections (width, heigt), 0 skips blur
+      mixBlur={0.1} // How much blur mixes with surface roughness
+      mixStrength={0.6} // Strength of the reflections
+      resolution={512} // Off-buffer resolution, lower=faster, higher=better quality
       mirror={1} // Mirror environment, 0 = texture colors, 1 = pick up env colors
-      minDepthThreshold={0.25}
-      maxDepthThreshold={1}
-      depthScale={100}
-      args={[10, 10]} 
+      minDepthThreshold={0.1}
+      maxDepthThreshold={0.2}
+      depthScale={1}
+      args={[2, 2]} 
       rotation={[-Math.PI / 2, 0, 0]} 
       position = {[0, -0.136, 0]}>
       {(Material, props) => <Material metalness={0.5} roughness={1}{...props} />}
@@ -74,13 +74,13 @@ const Scene = () => {
       <spotLight intensity={1} position={[30, 30, 30]} color="white" />
       <PerspectiveCamera makeDefault position={[2, 2, 5]} fov={10}>
       </PerspectiveCamera>
-      <Stars radius={100} depth={100} count={5000} factor={4} saturation={0} fade />
+      {/* <Stars radius={100} depth={100} count={5000} factor={4} saturation={0} fade /> */}
       <fog attach = "fog" args = {["black", 5, 10]}/>
-      <Particles count={5000} mouse = {mouse}/>
+      {/* <Particles count={5000} mouse = {mouse}/> */}
       <Suspense fallback={null}>
       <Ground />
-      <Statues name = {'/Statue1/scene.gltf'} scale={[0.007,0.007,0.007]} position={[0.5, -0.05, 0]}/>
-      <Statues name = {'/Statue2/scene.gltf'} scale={[0.000010,0.000010,0.000010]} position={[-0.5, 0.01, 0]}/>
+      <Statues name = {'/Statue1/scene.gltf'} scale={[0.007,0.007,0.007]} position={[0.4, -0.05, 0]}/>
+      <Statues name = {'/Statue2/scene.gltf'} scale={[0.000010,0.000010,0.000010]} position={[-0.35, 0.01, 0]}/>
       <Collesium />
       </Suspense>
       <OrbitControls autoRotate  enableZoom={true} maxPolarAngle={Math.PI / 2} />
