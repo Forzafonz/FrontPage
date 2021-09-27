@@ -74,9 +74,9 @@ const Scene = () => {
       <spotLight intensity={1} position={[30, 30, 30]} color="white" />
       <PerspectiveCamera makeDefault position={[2, 2, 5]} fov={10}>
       </PerspectiveCamera>
-      {/* <Stars radius={100} depth={100} count={5000} factor={4} saturation={0} fade /> */}
-      <fog attach = "fog" args = {["black", 5, 10]}/>
-      {/* <Particles count={5000} mouse = {mouse}/> */}
+      <Stars radius={100} depth={100} count={5000} factor={4} saturation={0} fade />
+      <fog attach = "fog" args = {["black", 2, 10]}/>
+      <Particles count={5000} mouse = {mouse}/>
       <Suspense fallback={null}>
       <Ground />
       <Statues name = {'/Statue1/scene.gltf'} scale={[0.007,0.007,0.007]} position={[0.4, -0.05, 0]}/>
